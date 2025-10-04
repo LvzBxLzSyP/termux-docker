@@ -60,7 +60,7 @@ jobs:
         docker push lzsyprz/termux-docker:${{ matrix.CPU_ARCH }}
         if [ ${{ matrix.CPU_ARCH }} = i686 ]; then
           docker tag lzsyprz/termux-docker:i686 termux/termux-docker:latest
-          docker push termux/termux-docker:latest
+          docker push lzsyprz/termux-docker:latest
         fi
 
     - name: Export container as tar archive
