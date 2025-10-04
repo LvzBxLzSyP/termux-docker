@@ -2,7 +2,6 @@
 # Bootstrap Termux environment.
 FROM scratch AS bootstrap
 
-ARG BOOTSTRAP_VERSION=2023.02.19-r1%2Bapt-android-7
 ARG BOOTSTRAP_ARCH=i686
 ARG SYSTEM_TYPE=x86
 
@@ -18,7 +17,7 @@ COPY /entrypoint.sh /entrypoint.sh
 COPY /entrypoint_root.sh /entrypoint_root.sh
 
 # Extract bootstrap archive and create symlinks.
-ADD https://github.com/termux/termux-packages/releases/download/bootstrap-$BOOTSTRAP_VERSION/bootstrap-$BOOTSTRAP_ARCH.zip /bootstrap.zip
+ADD https://github.com/termux/termux-packages/releases/download/latest/bootstrap-$BOOTSTRAP_ARCH.zip /bootstrap.zip
 RUN busybox mkdir -p /data/data/com.termux/files && \
     cd /data/data/com.termux/files && \
     busybox mkdir ../cache ./usr ./home && \
