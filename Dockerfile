@@ -17,7 +17,7 @@ COPY /entrypoint.sh /entrypoint.sh
 COPY /entrypoint_root.sh /entrypoint_root.sh
 
 # Extract bootstrap archive and create symlinks.
-ADD https://github.com/termux/termux-packages/releases/download/latest/bootstrap-$BOOTSTRAP_ARCH.zip /bootstrap.zip
+ADD https://github.com/termux/termux-packages/releases/latest/download/bootstrap-$BOOTSTRAP_ARCH.zip /bootstrap.zip
 RUN busybox mkdir -p /data/data/com.termux/files && \
     cd /data/data/com.termux/files && \
     busybox mkdir ../cache ./usr ./home && \
